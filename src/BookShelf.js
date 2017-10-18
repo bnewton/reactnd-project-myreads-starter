@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import BookShelfRow from './BookShelfRow'
-import keyIndex from 'react-key-index';
+//import keyIndex from 'react-key-index';
 
 
 class BookShelf extends Component {
@@ -20,11 +20,11 @@ class BookShelf extends Component {
 
         const {books, onBookUpdate} = this.props
 
-        let library = keyIndex(books, 1);
+        //let library = keyIndex(books, 1);
 
-        read                = library.filter((book) => book.shelf === 'read')
-        currentlyReading    = library.filter((book) => book.shelf === 'currentlyReading')
-        wantToRead          = library.filter((book) => book.shelf === 'wantToRead')
+        read                = books.filter((book) => book.shelf === 'read')
+        currentlyReading    = books.filter((book) => book.shelf === 'currentlyReading')
+        wantToRead          = books.filter((book) => book.shelf === 'wantToRead')
 
         return(
             <div className="list-books">
