@@ -20,11 +20,11 @@ class BookShelf extends Component {
 
         const {books, onBookUpdate} = this.props
 
-        let ebooks = keyIndex(books, 1);
+        let library = keyIndex(books, 1);
 
-        read                = ebooks.filter((book) => book.shelf === 'read')
-        currentlyReading    = ebooks.filter((book) => book.shelf === 'currentlyReading')
-        wantToRead          = ebooks.filter((book) => book.shelf === 'wantToRead')
+        read                = library.filter((book) => book.shelf === 'read')
+        currentlyReading    = library.filter((book) => book.shelf === 'currentlyReading')
+        wantToRead          = library.filter((book) => book.shelf === 'wantToRead')
 
         return(
             <div className="list-books">

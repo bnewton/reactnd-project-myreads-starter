@@ -32,7 +32,9 @@ class BookSearch extends Component {
                         })
                     })
 
-                    this.setState({availableBooks: response})
+                    if(this.state.availableBooks !== response){
+                        this.setState({availableBooks: response})
+                    }
                 }
             })
         } else {
