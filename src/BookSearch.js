@@ -43,6 +43,14 @@ class BookSearch extends Component {
         }
     }
 
+    selectValue = (value) => {
+        if (value === undefined || value === null){
+            return "none";
+        } else {
+            return value;
+        }
+    }
+
     render() {
 
         const {availableBooks} = this.state
@@ -64,7 +72,7 @@ class BookSearch extends Component {
                                     <div className="book-top">
                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${availableBooks.imageLinks.thumbnail})` }}></div>
                                         <div className="book-shelf-changer">
-                                            <select value={availableBooks.shelf} onChange={(event) => onBookUpdate(availableBooks, event.target.value)}>
+                                            <select value={this.selectValue(availableBooks.shelf)} onChange={(event) => onBookUpdate(availableBooks, event.target.value)}>
                                                 <option value="none" disabled>Move to...</option>
                                                 <option value="currentlyReading">Currently Reading</option>
                                                 <option value="wantToRead">Want to Read</option>
